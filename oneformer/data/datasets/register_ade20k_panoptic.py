@@ -388,6 +388,8 @@ def register_all_ade20k_panoptic(root):
             os.path.join(root, panoptic_json),
             os.path.join(root, instance_json),
         )
+    MetadataCatalog.get("ade20k_sem_seg_train").set(**metadata)
+    MetadataCatalog.get("ade20k_sem_seg_val").set(**metadata)
 
 
 _root = os.getenv("DETECTRON2_DATASETS", "datasets")

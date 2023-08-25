@@ -9,7 +9,9 @@ from .data.dataset_mappers.coco_unified_new_baseline_dataset_mapper import COCOU
 from .data.dataset_mappers.oneformer_unified_dataset_mapper import (
     OneFormerUnifiedDatasetMapper,
 )
-
+from .data.dataset_mappers.semantic_oneformer_custom_dataset_mapper import (
+    SemanticOneFormerCustomDatasetMapper,
+)
 # models
 from .oneformer_model import OneFormer
 from .test_time_augmentation import SemanticSegmentorWithTTA

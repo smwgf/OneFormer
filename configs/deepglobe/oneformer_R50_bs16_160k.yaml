@@ -1,4 +1,4 @@
-_BASE_: Base-ADE20K-UnifiedSegmentation.yaml
+_BASE_: Base-deepglobe-SemanticSegmentation.yaml
 MODEL:
   META_ARCHITECTURE: "OneFormer"
   SEM_SEG_HEAD:

@@ -51,3 +51,9 @@ _darcs
 /projects/*/datasets
 /models
 /snippet
+
+#wandb dirs
+/wandb
+
+#test script
+test.ipynb
