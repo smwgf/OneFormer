@@ -22,10 +22,14 @@ class VisualizationDemo(object):
             parallel (bool): whether to run the model in different processes from visualization.
                 Useful since the visualization logic can be slow.
         """
+        test_dataset = cfg.DATASETS.TEST_PANOPTIC
+        if len(test_dataset[0]) == 0:
+            test_dataset = cfg.DATASETS.TEST_SEMANTIC
+        print(f'{test_dataset[0]}, len: {len(test_dataset)} ')
         self.metadata = MetadataCatalog.get(
-            cfg.DATASETS.TEST_PANOPTIC[0] if len(cfg.DATASETS.TEST_PANOPTIC) else "__unused"
+            test_dataset[0] if len(test_dataset) else "__unused"
         )
-        if 'cityscapes_fine_sem_seg_val' in cfg.DATASETS.TEST_PANOPTIC[0]:
+        if 'cityscapes_fine_sem_seg_val' in test_dataset[0]:
             from cityscapesscripts.helpers.labels import labels
             stuff_colors = [k.color for k in labels if k.trainId != 255]
             self.metadata = self.metadata.set(stuff_colors=stuff_colors)

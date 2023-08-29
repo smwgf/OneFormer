@@ -11,10 +11,10 @@ from detectron2.utils.file_io import PathManager
 from pathlib import Path
 
 DEEPGLOBE_2_CATEGORIES = [
-    {"color": [255, 255, 255], "id": 0, "isthing": 0, "name": "road"},
-    {"color": [0, 0, 0], "id": 1, "isthing": 0, "name": "background"},
+    {"color": [255, 255, 255], "id": 0, "isthing": 0, "name": "background"},
+    {"color": [0, 0, 0], "id": 1, "isthing": 0, "name": "road"},
 ]
-STUFF_CLASSES = ["road","background"]
+STUFF_CLASSES = ["background","road"]
 
 DEEPGLOBE_COLORS = [k["color"] for k in DEEPGLOBE_2_CATEGORIES]
 
